@@ -24,7 +24,7 @@ public class PetStoreTest {
     @Test
     public void getPetCategoryDetails() {
         given().get("http://localhost:8080/api/v3/pet/1").then().statusCode(200).body("category.id",equalTo(2));
-        given().get("http://localhost:8080/api/v3/pet/1").then().statusCode(200).body("name",equalTo("Cat 1"));
+        given().get("http://localhost:8080/api/v3/pet/1").then().statusCode(200).body("category.name",equalTo("Cats"));
     }
 
     @Test
@@ -38,11 +38,15 @@ public class PetStoreTest {
         RestAssured.baseURI = "http://localhost:8080";
         RestAssured.basePath = "api/v3/pet/";
         Response response = given().contentType(ContentType.JSON).log().all().put("2");
-        assertEquals(response.getStatusCode(), 404);
+        assertEquals(response.getStatusCode(), 405);
     }
 
     @Test
     public void getPetDetailsInvalidBasePath() {
         given().get("http://localhost:8080/api/v3/pet/20").then().statusCode(404);
     }
+@Test
+    public void getPetName(){
+        given().get("http://localhost:8080/api/v3/pet/1").then().statusCode(200).body("name", equalTo("Cat 1"));
+}
 }
