@@ -1,0 +1,6 @@
+As per the charters no:- 15, this is the most important feature.If the user transfer money and then check in the all accounts section, its not reflecting as an expense. Then it would create confusion for the user.
+It has to display in all the account section.
+
+For each charter, the time was 5-6 minutes.
+
+If there are issues in the app, it can lead to loss of money or misunderstanding in accounts. And can create problems for the user to maintain the expenses, income or transfer in day to day life.
